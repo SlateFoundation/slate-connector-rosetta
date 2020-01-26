@@ -18,6 +18,9 @@ class Connector extends \Emergence\Connectors\AbstractConnector
 {
     public static $rosettaDomain;
     public static $sections = [];
+    public static $group;
+    public static $language;
+    public static $curriculum;
 
     public static $connectorId = 'rosetta-stone';
 
@@ -98,9 +101,9 @@ class Connector extends \Emergence\Connectors\AbstractConnector
                 $spreadsheet->writeRow([
                     $Student->Username,
                     $Mapping->ExternalIdentifier,
-                    'SLA',
-                    'English',
-                    'Spanish (Spain) Level 1',
+                    static::$group,
+                    static::$language,
+                    static::$curriculum,
                     $Student->FirstName,
                     $Student->MiddleName,
                     $Student->LastName,
